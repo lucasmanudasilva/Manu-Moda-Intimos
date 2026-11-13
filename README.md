@@ -1,1 +1,1 @@
-# Manu-Moda-Intimos
+# Manu-Moda-Intima

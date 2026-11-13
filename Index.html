@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manu Moda Íntima | Lingeries de Luxo, Sensualidade & Conforto</title>
+  <meta name="description"
+    content="Manu Moda Íntima - Beleza, conforto e sensualidade para você. Lingeries de luxo, conjuntos de renda francesa, bodies, robes de cetim e embalagem 100% discreta para todo o Brasil.">
+  <link rel="icon" type="image/jpeg" href="Icone/manu.jpeg">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="Estilo.css">
+</head>
+
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar" aria-label="Avisos e Promoções">
+    <div class="top-bar-inner">
+      <span><span class="top-bar-badge">Frete Grátis</span> Em compras acima de R$ 199,00 para todo o Brasil</span>
+      <span>•</span>
+      <span>🔒 Embalagem 100% Discreta & Segura</span>
+      <span>•</span>
+      <span>💳 Até 3x sem juros no cartão de crédito</span>
+      <span>•</span>
+      <span>Cupom: <strong style="color: #fff; letter-spacing: 1px;">MANU10</strong> (10% OFF na 1ª compra)</span>
+    </div>
+  </aside>
+
+  <!-- Sticky Luxury Navigation -->
+  <header class="navbar">
+    <div class="container nav-container">
+
+      <!-- Brand Logo & Identity -->
+      <a href="#inicio" class="brand-link" id="brandLogo">
+        <img src="Icone/manu.jpeg" alt="Manu Moda Íntima Logo" class="brand-avatar">
+        <div class="brand-info">
+          <span class="brand-name">Manu</span>
+          <span class="brand-tagline">Moda Íntima</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#inicio" class="nav-link active">Início</a></li>
+          <li><a href="#catalogo" class="nav-link">Coleções</a></li>
+          <li><a href="#destaque" class="nav-link">Destaque Boudoir</a></li>
+          <li><a href="#experiencia" class="nav-link">Diferenciais</a></li>
+          <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
+          <li><a href="#faq" class="nav-link">Dúvidas</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions (Search, Wishlist, Cart, WhatsApp) -->
+      <div class="nav-actions">
+        <button class="icon-btn" onclick="openSizeGuide()" title="Guia de Medidas" aria-label="Guia de Medidas">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21.3 15.3l-6.6-6.6a2 2 0 0 0-2.8 0L2.7 17.9a2 2 0 0 0 0 2.8l.6.6a2 2 0 0 0 2.8 0l9.2-9.2"></path>
+            <path d="M14 6l3-3 4 4-3 3"></path>
+          </svg>
+        </button>
+
+        <button class="icon-btn" onclick="showToast('Você tem ' + wishlist.length + ' item(ns) na lista de desejos!')"
+          title="Favoritos" aria-label="Favoritos">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+            </path>
+          </svg>
+          <span class="badge-count" id="wishlistBadgeCount">0</span>
+        </button>
+
+        <button class="icon-btn" id="openCartBtn" onclick="openCartDrawer()" title="Sacola de Compras"
+          aria-label="Sacola de Compras">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="badge-count" id="cartBadgeCount">0</span>
+        </button>
+
+        <a href="https://api.whatsapp.com/send?phone=69999217218&text=Ol%C3%A1%2C%20Manu%20Moda%20%C3%8Dntima!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20as%20pe%C3%A7as."
+          target="_blank" rel="noopener" class="btn-whatsapp-header">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M17.472 14.382c-.301-.15-1.78-.879-2.056-.98-.276-.1-.477-.15-.678.15-.2.3-.778.98-.954 1.18-.175.2-.351.225-.652.075s-1.272-.469-2.423-1.496c-.895-.799-1.5-1.786-1.675-2.087-.175-.3-.019-.462.132-.612.136-.135.301-.35.452-.525.15-.175.2-.3.301-.5.101-.2.05-.375-.025-.525s-.678-1.635-.929-2.24c-.244-.589-.492-.51-.678-.52l-.577-.01c-.2 0-.526.075-.802.375s-1.054 1.03-1.054 2.513 1.079 2.914 1.23 3.114c.15.2 2.123 3.242 5.143 4.547.718.311 1.278.497 1.716.637.722.23 1.378.197 1.898.12.579-.086 1.78-.727 2.03-1.43.251-.703.251-1.305.176-1.43-.075-.125-.276-.2-.577-.35zM12 2a10 10 0 0 0-8.6 15.1L2 22l5.05-1.33A9.97 9.97 0 0 0 12 22a10 10 0 0 0 10-10A10 10 0 0 0 12 2z" />
+          </svg>
+          WhatsApp VIP
+        </a>
+
+        <!-- Mobile Toggle Button -->
+        <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero-section" id="inicio">
+      <div class="hero-backdrop"></div>
+      <div class="container hero-grid">
+
+        <!-- Text & Call to Action -->
+        <div class="hero-content">
+          <div class="hero-tag">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>
+            Coleção Exclusiva Haute Lingerie
+          </div>
+
+          <h1 class="hero-title">
+            Beleza, Conforto e <br>
+            <span class="script-accent">Sensualidade</span> <br>
+            para <span class="gold-accent">Você!</span>
+          </h1>
+
+          <p class="hero-description">
+            Descubra o poder e a sofisticação da alta moda íntima. Rendas nobres francesas, toques acetinados e cortes
+            que abraçam suas curvas com pura perfeição.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#catalogo" class="btn-primary">
+              <span>Explorar Coleção</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+
+            <button class="btn-secondary" onclick="openSizeGuide()">
+              <span>Descubra seu Tamanho</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+            </button>
+          </div>
+
+          <div class="hero-trust-badges">
+            <div class="trust-item">
+              <span class="trust-number">+5.000</span>
+              <span class="trust-label">Mulheres Conquistadas</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-number">100%</span>
+              <span class="trust-label">Embalagem Discreta</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-number">4.9 / 5</span>
+              <span class="trust-label">Nota de Satisfação</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Showcase Visual Card -->
+        <div class="hero-visual">
+          <div class="hero-image-wrapper">
+            <img src="images/hero-banner.jpg" alt="Lingerie de Luxo Manu Moda Íntima" class="hero-main-img">
+
+            <div class="hero-floating-card">
+              <div class="floating-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
+              </div>
+              <div class="floating-text">
+                <h4>Sensação Única</h4>
+                <p>Toque macio & sustentação perfeita</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Benefits Strip -->
+    <section class="benefits-strip" aria-label="Garantias e Benefícios">
+      <div class="container">
+        <div class="benefits-grid">
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <div class="benefit-info">
+              <h4>Embalagem 100% Discreta</h4>
+              <p>Total sigilo e discrição na entrega</p>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+            </div>
+            <div class="benefit-info">
+              <h4>Frete Grátis > R$ 199</h4>
+              <p>Envio rápido com rastreamento</p>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <line x1="2" y1="10" x2="22" y2="10"></line>
+              </svg>
+            </div>
+            <div class="benefit-info">
+              <h4>Até 6x Sem Juros</h4>
+              <p>Pagamento facilitado e 100% seguro</p>
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                </polygon>
+              </svg>
+            </div>
+            <div class="benefit-info">
+              <h4>Renda Francesa & Qualidade</h4>
+              <p>Acabamentos nobres hipoalergênicos</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Catalog Section -->
+    <section class="section" id="catalogo">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-subtitle">Exclusividade & Luxo</span>
+          <h2 class="section-title">Coleção Mais Desejada</h2>
+          <p class="section-desc">
+            Cada detalhe foi desenhado para valorizar a sua essência. Escolha a sua peça favorita, selecione seu tamanho
+            e sinta o poder da lingerie Manu.
+          </p>
+        </div>
+
+        <!-- Controls: Category Tabs & Search -->
+        <div class="catalog-controls">
+          <div class="category-pills" role="tablist">
+            <button class="pill-btn active" onclick="filterCategory('all', this)">Todas as Peças</button>
+            <button class="pill-btn" onclick="filterCategory('conjuntos', this)">Conjuntos Rendados</button>
+            <button class="pill-btn" onclick="filterCategory('sutias', this)">Sutiãs</button>
+            <button class="pill-btn" onclick="filterCategory('bodies', this)">Bodies & Corpetes</button>
+            <button class="pill-btn" onclick="filterCategory('robes', this)">Robes & Camisolas</button>
+            <button class="pill-btn" onclick="filterCategory('cosmeticos', this)">Cosméticos & Íntimos</button>
+            <button class="pill-btn" onclick="filterCategory('strappy', this)">Sensual Strappy</button>
+          </div>
+
+          <div class="search-box">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="searchInput" class="search-input" placeholder="Buscar por modelo ou cor..."
+              oninput="handleSearch(this.value)">
+          </div>
+        </div>
+
+        <!-- Products Grid (Injected via app.js) -->
+        <div class="products-grid" id="productsGrid">
+          <!-- Populated dynamically -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Spotlight Featured Banner -->
+    <section class="spotlight-section" id="destaque">
+      <div class="container">
+        <div class="spotlight-card">
+
+          <div class="spotlight-content">
+            <span class="spotlight-badge">Edição Limitada</span>
+            <h2 class="spotlight-title">A Arte da Sedução & Conforto Boudoir</h2>
+            <p class="spotlight-desc">
+              Feito para noites inesquecíveis e momentos de puro autoamor. Nossas peças combinam modelagem anatômica com
+              toque de seda que não pinica nem marca a pele.
+            </p>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+              <button class="btn-primary"
+                onclick="filterCategory('robes'); document.getElementById('catalogo').scrollIntoView({behavior: 'smooth'});">
+                Ver Robes e Noite
+              </button>
+              <button class="btn-secondary" onclick="orderOnWhatsAppQuick(1)">
+                Consultar via WhatsApp
+              </button>
+            </div>
+          </div>
+
+          <div class="spotlight-image-box">
+            <img src="images/robe-seda-rose.jpg" alt="Robe Paris de Seda e Renda" loading="lazy">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Packaging & Customer Experience -->
+    <section class="section" id="experiencia" style="background: var(--bg-surface);">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-subtitle">O Padrão Manu</span>
+          <h2 class="section-title">A Experiência do seu Pedido</h2>
+          <p class="section-desc">Cuidamos de cada detalhe desde o momento do corte da renda até a chegada da caixa em
+            suas mãos.</p>
+        </div>
+
+        <div class="packaging-grid">
+
+          <div class="packaging-card">
+            <div class="packaging-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3>Embalagem 100% Discreta</h3>
+            <p>Sua encomenda é enviada em pacote selado e opaco, sem logos de lingerie ou descrições no exterior. Total
+              discrição e segurança para sua privacidade.</p>
+          </div>
+
+          <div class="packaging-card">
+            <div class="packaging-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                </path>
+              </svg>
+            </div>
+            <h3>Aroma Exclusivo & Cartão VIP</h3>
+            <p>Ao abrir a caixa, você sente a fragrância assinatura da Manu Moda Íntima em papel de seda de luxo com
+              mimos especiais para você.</p>
+          </div>
+
+          <div class="packaging-card">
+            <div class="packaging-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                </path>
+              </svg>
+            </div>
+            <h3>Conforto Anatômico</h3>
+            <p>Rendas suaves e aros acolchoados projetados para proporcionar sustentação sem apertar, valorizando cada
+              corpo com liberdade.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Testimonials / Prova Social -->
+    <section class="section" id="depoimentos">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-subtitle">Opinião de Quem Ama</span>
+          <h2 class="section-title">O Que Nossas Clientes Dizem</h2>
+          <p class="section-desc">Histórias reais de mulheres que renovaram sua autoestima com as peças Manu Moda
+            Íntima.</p>
+        </div>
+
+        <div class="testimonials-grid">
+
+          <div class="testimonial-card">
+            <div>
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote">
+                "O Conjunto Rosa Imperial é simplesmente maravilhoso! O caimento no busto ficou impecável, sustentou
+                perfeitamente e a renda é super macia, não pinica nada. Meu marido amou!"
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">BF</div>
+              <div class="author-info">
+                <h4>Beatriz Fernandes</h4>
+                <span>São Paulo - SP • Compra Verificada</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div>
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote">
+                "Estava com receio do tamanho, mas usei o guia de medidas do site e deu certinho! A embalagem veio super
+                cheirosa e muito discreta. Com certeza vou comprar mais vezes."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">CL</div>
+              <div class="author-info">
+                <h4>Camila Lacerda</h4>
+                <span>Belo Horizonte - MG • Compra Verificada</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div>
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote">
+                "O Robe de Cetim Paris é pura sofisticação. Uso em momentos especiais e sinto uma verdadeira rainha. O
+                atendimento no WhatsApp foi rápido e atencioso demais!"
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">JR</div>
+              <div class="author-info">
+                <h4>Juliana Ribeiro</h4>
+                <span>Curitiba - PR • Compra Verificada</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="section" id="faq" style="background: var(--bg-surface);">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-subtitle">Tire suas Dúvidas</span>
+          <h2 class="section-title">Perguntas Frequentes</h2>
+          <p class="section-desc">Tudo o que você precisa saber antes de fazer o seu pedido.</p>
+        </div>
+
+        <div class="faq-container">
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Como funciona a embalagem discreta?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              Sua privacidade é nossa prioridade absoluta. Todas as encomendas saem em caixas ou envelopes opacos
+              pardos/pretos totalmente lacrados, sem nenhuma menção à palavra lingerie ou ao segmento íntimo na etiqueta
+              externa.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Como saber qual é o meu tamanho ideal?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              Você pode clicar no botão <strong>Guia de Medidas</strong> no topo ou nos produtos para consultar nossa
+              tabela com medidas de busto, tórax, cintura e quadril. Se preferir, nossa equipe te auxilia pelo WhatsApp
+              em tempo real.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Quais são as formas de pagamento disponíveis?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              Aceitamos cartões de crédito em até 6x sem juros e facilitamos seu pedido com atendimento personalizado diretamente no WhatsApp.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Qual o prazo de envio e entrega?</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              Os pedidos com pagamento confirmado são postados em até 24 a 48 horas úteis. Assim que o pacote for
+              despachado, enviamos o código de rastreamento diretamente para o seu WhatsApp e e-mail.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-col footer-brand">
+          <a href="#inicio" class="brand-link">
+            <img src="Icone/manu.jpeg" alt="Manu Moda Íntima" class="brand-avatar">
+            <div class="brand-info">
+              <span class="brand-name">Manu</span>
+              <span class="brand-tagline">Moda Íntima</span>
+            </div>
+          </a>
+          <p class="footer-desc">
+            "Beleza, conforto e sensualidade para você! ♡"<br>
+            A marca pensada para elevar sua autoestima e celebrar o poder feminino em cada detalhe.
+          </p>
+          <div class="social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn" title="Instagram"
+              aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=69999217218" target="_blank" rel="noopener" class="social-btn"
+              title="WhatsApp" aria-label="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.301-.15-1.78-.879-2.056-.98-.276-.1-.477-.15-.678.15-.2.3-.778.98-.954 1.18-.175.2-.351.225-.652.075s-1.272-.469-2.423-1.496c-.895-.799-1.5-1.786-1.675-2.087-.175-.3-.019-.462.132-.612.136-.135.301-.35.452-.525.15-.175.2-.3.301-.5.101-.2.05-.375-.025-.525s-.678-1.635-.929-2.24c-.244-.589-.492-.51-.678-.52l-.577-.01c-.2 0-.526.075-.802.375s-1.054 1.03-1.054 2.513 1.079 2.914 1.23 3.114c.15.2 2.123 3.242 5.143 4.547.718.311 1.278.497 1.716.637.722.23 1.378.197 1.898.12.579-.086 1.78-.727 2.03-1.43.251-.703.251-1.305.176-1.43-.075-.125-.276-.2-.577-.35zM12 2a10 10 0 0 0-8.6 15.1L2 22l5.05-1.33A9.97 9.97 0 0 0 12 22a10 10 0 0 0 10-10A10 10 0 0 0 12 2z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Categorias</h4>
+          <ul class="footer-links">
+            <li><a href="#catalogo" onclick="filterCategory('conjuntos')">Conjuntos de Renda</a></li>
+            <li><a href="#catalogo" onclick="filterCategory('sutias')">Sutiãs de Sustentação</a></li>
+            <li><a href="#catalogo" onclick="filterCategory('bodies')">Bodies & Corsets</a></li>
+            <li><a href="#catalogo" onclick="filterCategory('robes')">Robes & Camisolas</a></li>
+            <li><a href="#catalogo" onclick="filterCategory('cosmeticos')">Cosméticos & Íntimos</a></li>
+            <li><a href="#catalogo" onclick="filterCategory('strappy')">Linha Strappy Sensual</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Atendimento</h4>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="openSizeGuide()">Tabela de Medidas</a></li>
+            <li><a href="#faq">Dúvidas Frequentes</a></li>
+            <li><a href="#experiencia">Política de Privacidade</a></li>
+            <li><a href="#experiencia">Trocas e Devoluções</a></li>
+            <li><a href="https://api.whatsapp.com/send?phone=69999217218" target="_blank">Falar com Consultora</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contato Direto</h4>
+          <ul class="contact-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+              <span>WhatsApp: (69) 999217218</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>EMAIL-ADDRESS</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Seg à Sáb: 09h às 19h</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Manu Moda Íntima. Todos os direitos reservados. CNPJ: 00.000.000/0001-00.</div>
+        <div class="payment-badges">
+          <span>Atendimento & Compras:</span>
+          <span class="payment-tag">WHATSAPP</span>
+          <span class="payment-tag">CARTÃO 6X</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Action -->
+  <a href="https://api.whatsapp.com/send?phone=69999217218&text=Ol%C3%A1%2C%20Manu%20Moda%20%C3%8Dntima!%20Gostaria%20de%20fazer%20um%20pedido%20pelo%20site."
+    target="_blank" rel="noopener" class="floating-wpp" title="Falar no WhatsApp" aria-label="Falar no WhatsApp">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M17.472 14.382c-.301-.15-1.78-.879-2.056-.98-.276-.1-.477-.15-.678.15-.2.3-.778.98-.954 1.18-.175.2-.351.225-.652.075s-1.272-.469-2.423-1.496c-.895-.799-1.5-1.786-1.675-2.087-.175-.3-.019-.462.132-.612.136-.135.301-.35.452-.525.15-.175.2-.3.301-.5.101-.2.05-.375-.025-.525s-.678-1.635-.929-2.24c-.244-.589-.492-.51-.678-.52l-.577-.01c-.2 0-.526.075-.802.375s-1.054 1.03-1.054 2.513 1.079 2.914 1.23 3.114c.15.2 2.123 3.242 5.143 4.547.718.311 1.278.497 1.716.637.722.23 1.378.197 1.898.12.579-.086 1.78-.727 2.03-1.43.251-.703.251-1.305.176-1.43-.075-.125-.276-.2-.577-.35zM12 2a10 10 0 0 0-8.6 15.1L2 22l5.05-1.33A9.97 9.97 0 0 0 12 22a10 10 0 0 0 10-10A10 10 0 0 0 12 2z" />
+    </svg>
+  </a>
+
+  <!-- Shopping Cart Drawer Overlay & Container -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCartDrawer()"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Sacola de Compras">
+    <div class="cart-header">
+      <h3>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        Sua Sacola
+      </h3>
+      <button class="cart-close-btn" onclick="closeCartDrawer()" aria-label="Fechar Sacola">✕</button>
+    </div>
+
+    <!-- Free Shipping Progress Tracker -->
+    <div class="cart-shipping-progress">
+      <div id="freeShippingText">Adicione mais R$ 199,00 para Frete Grátis</div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="freeShippingBar"></div>
+      </div>
+    </div>
+
+    <!-- Items List -->
+    <div class="cart-items" id="cartItemsContainer">
+      <!-- Injected dynamically -->
+    </div>
+
+    <!-- Footer & Checkout Actions -->
+    <div class="cart-footer">
+      <div class="coupon-row">
+        <input type="text" id="couponInput" class="coupon-input" placeholder="Cupom (ex: MANU10)">
+        <button class="coupon-btn" onclick="applyCoupon()">Aplicar</button>
+      </div>
+
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">R$ 0,00</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>Desconto</span>
+        <span id="cartDiscount" style="color: var(--primary-pink);">R$ 0,00</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>Frete</span>
+        <span id="cartShipping">R$ 0,00</span>
+      </div>
+      <div class="cart-summary-line total">
+        <span>Total</span>
+        <span id="cartTotal">R$ 0,00</span>
+      </div>
+
+      <!-- Resumo do Pedido / Código das Compras -->
+      <div id="cartOrderSummaryBox" style="display: none; background: rgba(255,255,255,0.03); border: 1px solid var(--border-pink); padding: 12px; border-radius: var(--radius-md); margin: 12px 0;">
+        <div style="font-size: 0.8rem; font-weight: 700; color: var(--rose-gold); margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
+          <span>📋 Resultado das Compras (Código):</span>
+          <button onclick="copyOrderCodeOnly()" style="background: rgba(230,0,103,0.2); border: 1px solid var(--border-pink); color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 0.72rem; cursor: pointer; transition: background 0.2s;">📋 Copiar Código</button>
+        </div>
+        <pre id="cartOrderCodePreview" style="font-size: 0.72rem; color: #e0e0e0; white-space: pre-wrap; font-family: monospace; max-height: 120px; overflow-y: auto; background: rgba(0,0,0,0.4); padding: 8px; border-radius: 4px; margin: 0; border: 1px solid var(--border-subtle);"></pre>
+      </div>
+
+      <div class="cart-buttons">
+        <button class="btn-wpp-checkout" onclick="checkoutWhatsApp()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M17.472 14.382c-.301-.15-1.78-.879-2.056-.98-.276-.1-.477-.15-.678.15-.2.3-.778.98-.954 1.18-.175.2-.351.225-.652.075s-1.272-.469-2.423-1.496c-.895-.799-1.5-1.786-1.675-2.087-.175-.3-.019-.462.132-.612.136-.135.301-.35.452-.525.15-.175.2-.3.301-.5.101-.2.05-.375-.025-.525s-.678-1.635-.929-2.24c-.244-.589-.492-.51-.678-.52l-.577-.01c-.2 0-.526.075-.802.375s-1.054 1.03-1.054 2.513 1.079 2.914 1.23 3.114c.15.2 2.123 3.242 5.143 4.547.718.311 1.278.497 1.716.637.722.23 1.378.197 1.898.12.579-.086 1.78-.727 2.03-1.43.251-.703.251-1.305.176-1.43-.075-.125-.276-.2-.577-.35zM12 2a10 10 0 0 0-8.6 15.1L2 22l5.05-1.33A9.97 9.97 0 0 0 12 22a10 10 0 0 0 10-10A10 10 0 0 0 12 2z" />
+          </svg>
+          Finalizar Compras (Copiar Código e Ir p/ WhatsApp)
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Quick View Modal -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeModal('quickViewModal')" aria-label="Fechar">✕</button>
+      <div id="quickViewContent">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Size Guide Modal -->
+  <div class="modal-overlay" id="sizeGuideModal">
+    <div class="modal-container" style="max-width: 650px;">
+      <button class="modal-close-btn" onclick="closeModal('sizeGuideModal')" aria-label="Fechar">✕</button>
+      <div class="size-guide-content">
+        <h2 style="font-family: var(--font-serif); font-size: 1.6rem; margin-bottom: 8px;">Guia de Medidas & Tamanhos
+        </h2>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">
+          Use uma fita métrica justa ao corpo, sem apertar, para descobrir o tamanho ideal da sua lingerie Manu.
+        </p>
+
+        <table class="size-table">
+          <thead>
+            <tr>
+              <th>Tamanho</th>
+              <th>Manequim</th>
+              <th>Busto (cm)</th>
+              <th>Quadril (cm)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b style="color:var(--rose-gold-light);">P</b></td>
+              <td>38 - 40</td>
+              <td>80 - 86 cm</td>
+              <td>88 - 94 cm</td>
+            </tr>
+            <tr>
+              <td><b style="color:var(--rose-gold-light);">M</b></td>
+              <td>42</td>
+              <td>87 - 92 cm</td>
+              <td>95 - 100 cm</td>
+            </tr>
+            <tr>
+              <td><b style="color:var(--rose-gold-light);">G</b></td>
+              <td>44</td>
+              <td>93 - 98 cm</td>
+              <td>101 - 106 cm</td>
+            </tr>
+            <tr>
+              <td><b style="color:var(--rose-gold-light);">GG</b></td>
+              <td>46</td>
+              <td>99 - 105 cm</td>
+              <td>107 - 114 cm</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Interactive Calculator -->
+        <div
+          style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); padding: 18px; border-radius: var(--radius-md);">
+          <h4 style="font-size: 0.95rem; margin-bottom: 12px; color: #fff;">Calculadora de Tamanho Ideal</h4>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+            <div>
+              <label style="font-size: 0.75rem; color: var(--text-muted); display:block; margin-bottom:4px;">Seu Busto
+                (cm):</label>
+              <input type="number" id="inputBusto" placeholder="Ex: 88"
+                style="width: 100%; padding: 8px 12px; border-radius: 6px; background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); color: #fff;">
+            </div>
+            <div>
+              <label style="font-size: 0.75rem; color: var(--text-muted); display:block; margin-bottom:4px;">Seu Quadril
+                (cm):</label>
+              <input type="number" id="inputQuadril" placeholder="Ex: 96"
+                style="width: 100%; padding: 8px 12px; border-radius: 6px; background: rgba(0,0,0,0.4); border: 1px solid var(--border-subtle); color: #fff;">
+            </div>
+          </div>
+          <button class="btn-primary" id="calculateSizeBtn" style="width: 100%; padding: 10px; font-size: 0.85rem;">
+            Calcular Meu Tamanho
+          </button>
+          <div id="sizeResult"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Live Theme Customizer Widget -->
+  <button class="customizer-toggle-btn" id="customizerToggleBtn" title="Personalizar Cores e Fontes"
+    aria-label="Personalizar Estilo">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+      <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+      <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+      <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+      <path
+        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.563-2.512 5.563-5.563C21.438 6.5 17.5 2 12 2z">
+      </path>
+    </svg>
+  </button>
+
+  <div class="customizer-panel" id="customizerPanel">
+    <div class="customizer-title">
+      <span>Personalizar Visual</span>
+      <button style="color:var(--text-muted); cursor:pointer;" onclick="toggleCustomizer()">✕</button>
+    </div>
+
+    <span class="customizer-section-label">Paleta de Cores:</span>
+    <div class="theme-options-grid">
+      <button class="theme-chip active" onclick="setTheme('', this)">🖤 Noir & Rose</button>
+      <button class="theme-chip" onclick="setTheme('theme-magenta', this)">💖 Magenta Pop</button>
+      <button class="theme-chip" onclick="setTheme('theme-gold', this)">✨ Ouro & Glow</button>
+      <button class="theme-chip" onclick="setTheme('theme-light', this)">🌸 Nude Claro</button>
+    </div>
+
+    <span class="customizer-section-label">Estilo das Fontes:</span>
+    <div class="font-options-grid">
+      <button class="font-chip active" onclick="setFont('', this)">Clássico Luxo</button>
+      <button class="font-chip" onclick="setFont('font-modern', this)">Moderno Clean</button>
+    </div>
+  </div>
+
+  <!-- Mascot "Is" Floating Interactive Companion -->
+  <div class="is-mascot-widget" id="isMascotWidget" aria-label="Mascote Is - Manu Moda Íntima">
+    <div class="is-speech-bubble" id="isSpeechBubble">
+      <button class="is-bubble-close" onclick="closeIsBubble(event)" title="Fechar fala">✕</button>
+      <div class="is-bubble-header">
+        <span class="is-bubble-name">🐾 Is Fala:</span>
+        <span class="is-bubble-tag" id="isBubbleTag">Honesta & Barulhenta!</span>
+      </div>
+      <p class="is-bubble-text" id="isBubbleText">
+        MIAAAU! Bem-vinda à Manu Moda Íntima! Eu sou a Is, sua conselheira fashion! Gata preta aqui só dá poder, sorte e
+        desconto: usa o cupom <b>MANU10</b>!
+      </p>
+      <div class="is-bubble-footer">
+        <button class="is-bubble-action" onclick="triggerRandomIsQuote()">Pedir Conselho da Is ✨</button>
+      </div>
+    </div>
+
+    <button class="is-mascot-btn" id="isMascotBtn" onclick="toggleIsMascot()" title="Clique para ouvir a Is!">
+      <img src="Mascote_Is/Is_animada.png" alt="Is Mascote Manu Moda Íntima" class="is-avatar-img" id="isAvatarImg">
+      <span class="is-badge-hint">Conselho da Is!</span>
+    </button>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Core JavaScript -->
+  <script src="app.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,476 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+<defs>
+    <!-- Atmosphere & Lighting -->
+    <radialGradient id="bgAmbient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.12" />
+      <stop offset="70%" stop-color="#be185d" stop-opacity="0.03" />
+      <stop offset="100%" stop-color="#000" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Velvet Fur Gradients (Rich midnight black with deep indigo/violet undertones) -->
+    <radialGradient id="headShading" cx="48%" cy="42%" r="58%">
+      <stop offset="0%" stop-color="#2a2736" />
+      <stop offset="35%" stop-color="#1d1b26" />
+      <stop offset="75%" stop-color="#121019" />
+      <stop offset="100%" stop-color="#08070d" />
+    </radialGradient>
+
+    <radialGradient id="bodyFurGrad" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#221f2d" />
+      <stop offset="60%" stop-color="#13111b" />
+      <stop offset="100%" stop-color="#07060a" />
+    </radialGradient>
+
+    <!-- Ear Velvet & Inner Glow -->
+    <linearGradient id="earLeftOuter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c283a" />
+      <stop offset="60%" stop-color="#14121c" />
+      <stop offset="100%" stop-color="#0a090e" />
+    </linearGradient>
+
+    <linearGradient id="earRightOuter" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2c283a" />
+      <stop offset="60%" stop-color="#14121c" />
+      <stop offset="100%" stop-color="#0a090e" />
+    </linearGradient>
+
+    <radialGradient id="earInnerL" cx="40%" cy="70%" r="65%">
+      <stop offset="0%" stop-color="#ffe4e6" />
+      <stop offset="35%" stop-color="#f472b6" />
+      <stop offset="75%" stop-color="#db2777" />
+      <stop offset="100%" stop-color="#831843" />
+    </radialGradient>
+
+    <radialGradient id="earInnerR" cx="60%" cy="70%" r="65%">
+      <stop offset="0%" stop-color="#ffe4e6" />
+      <stop offset="35%" stop-color="#f472b6" />
+      <stop offset="75%" stop-color="#db2777" />
+      <stop offset="100%" stop-color="#831843" />
+    </radialGradient>
+
+    <!-- Muzzle Velvet Pads -->
+    <radialGradient id="muzzleLeft" cx="45%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#322d42" />
+      <stop offset="60%" stop-color="#1c1926" />
+      <stop offset="100%" stop-color="#100e18" />
+    </radialGradient>
+    <radialGradient id="muzzleRight" cx="55%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#322d42" />
+      <stop offset="60%" stop-color="#1c1926" />
+      <stop offset="100%" stop-color="#100e18" />
+    </radialGradient>
+
+    <!-- Paw Fur & Pink Pad Gradients -->
+    <radialGradient id="pawPadMain" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#fce7f3" />
+      <stop offset="45%" stop-color="#f472b6" />
+      <stop offset="85%" stop-color="#db2777" />
+      <stop offset="100%" stop-color="#be185d" />
+    </radialGradient>
+
+    <radialGradient id="toePad" cx="45%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#fce7f3" />
+      <stop offset="50%" stop-color="#f472b6" />
+      <stop offset="100%" stop-color="#db2777" />
+    </radialGradient>
+
+    <!-- Rim Lighting (Rose Gold / Manu Pink rim sheen) -->
+    <linearGradient id="rimPinkL" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fb7185" stop-opacity="0.75" />
+      <stop offset="40%" stop-color="#fda4af" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#fb7185" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="rimPinkR" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#fb7185" stop-opacity="0.75" />
+      <stop offset="40%" stop-color="#fda4af" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#fb7185" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Eyes: Golden Amber + Jewel Purple/Violet Pupil -->
+    <radialGradient id="eyeScleraGold" cx="48%" cy="46%" r="52%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="18%" stop-color="#fef9c3" />
+      <stop offset="48%" stop-color="#facc15" />
+      <stop offset="80%" stop-color="#eab308" />
+      <stop offset="100%" stop-color="#b45309" />
+    </radialGradient>
+
+    <radialGradient id="pupilAmethyst" cx="42%" cy="38%" r="60%">
+      <stop offset="0%" stop-color="#f3e8ff" />
+      <stop offset="22%" stop-color="#d8b4fe" />
+      <stop offset="55%" stop-color="#a855f7" />
+      <stop offset="82%" stop-color="#6b21a8" />
+      <stop offset="100%" stop-color="#2e1065" />
+    </radialGradient>
+
+    <!-- Nose & Mouth -->
+    <linearGradient id="nosePink" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f472b6" />
+      <stop offset="60%" stop-color="#db2777" />
+      <stop offset="100%" stop-color="#9d174d" />
+    </linearGradient>
+
+    <linearGradient id="mouthThroat" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2e1065" />
+      <stop offset="35%" stop-color="#4c1d95" />
+      <stop offset="100%" stop-color="#831843" />
+    </linearGradient>
+
+    <radialGradient id="tonguePink" cx="50%" cy="25%" r="75%">
+      <stop offset="0%" stop-color="#fce7f3" />
+      <stop offset="35%" stop-color="#f472b6" />
+      <stop offset="80%" stop-color="#db2777" />
+      <stop offset="100%" stop-color="#9d174d" />
+    </radialGradient>
+
+    <!-- Luxury Pink Satin Bow Ribbon (Manu Brand) -->
+    <linearGradient id="satinFoldL" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf2f8" />
+      <stop offset="20%" stop-color="#f472b6" />
+      <stop offset="65%" stop-color="#db2777" />
+      <stop offset="100%" stop-color="#831843" />
+    </linearGradient>
+
+    <linearGradient id="satinFoldR" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fdf2f8" />
+      <stop offset="20%" stop-color="#f472b6" />
+      <stop offset="65%" stop-color="#db2777" />
+      <stop offset="100%" stop-color="#831843" />
+    </linearGradient>
+
+    <radialGradient id="satinKnotBall" cx="45%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#fdf2f8" />
+      <stop offset="30%" stop-color="#f472b6" />
+      <stop offset="75%" stop-color="#db2777" />
+      <stop offset="100%" stop-color="#701a75" />
+    </radialGradient>
+
+    <!-- Gold Crown Metallic Gradients -->
+    <linearGradient id="goldSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef9c3" />
+      <stop offset="25%" stop-color="#fde047" />
+      <stop offset="50%" stop-color="#eab308" />
+      <stop offset="75%" stop-color="#ca8a04" />
+      <stop offset="100%" stop-color="#854d0e" />
+    </linearGradient>
+
+    <filter id="subtleDrop" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.38" />
+    </filter>
+
+    <filter id="glowGold" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Ambient Backdrop -->
+  <circle cx="500" cy="500" r="470" fill="url(#bgAmbient)" />
+
+
+  <!-- BODY & CHEST -->
+  <g id="body-bust" filter="url(#subtleDrop)">
+    <!-- Shoulders curve -->
+    <path d="M 330 680 C 270 720 210 790 170 910 C 240 945 370 960 500 960 C 630 960 760 945 830 910 C 790 790 730 720 670 680 Z" 
+          fill="url(#bodyFurGrad)" />
+    <!-- Chest soft center light -->
+    <path d="M 400 700 C 460 675 540 675 600 700 C 580 810 550 880 500 900 C 450 880 420 810 400 700 Z" 
+          fill="#2b263b" opacity="0.4" />
+  </g>
+
+
+  <!-- EARS -->
+  <g id="ears">
+    <!-- Left Ear -->
+    <g id="ear-left">
+      <!-- Outer Ear Shell -->
+      <path d="M 295 360 C 275 270 285 170 325 85 C 375 155 435 240 450 295 C 380 310 325 330 295 360 Z" 
+            fill="url(#earLeftOuter)" stroke="#110f17" stroke-width="4" stroke-linejoin="round" />
+      <!-- Inner Ear Rose Cavity -->
+      <path d="M 315 330 C 305 265 315 185 340 125 C 375 180 420 245 432 285 C 385 298 340 312 315 330 Z" 
+            fill="url(#earInnerL)" />
+      <!-- Fluffy White/Rose Inner Tufts -->
+      <path d="M 325 315 C 345 285 375 290 390 270 C 375 295 360 315 350 335 Z" fill="#ffffff" opacity="0.85" />
+      <path d="M 345 335 C 370 305 398 308 412 285 C 395 315 375 335 365 350 Z" fill="#fce7f3" opacity="0.7" />
+      <path d="M 320 100 C 300 175 290 250 300 325" stroke="#fda4af" stroke-width="2.5" fill="none" opacity="0.45" />
+    </g>
+
+    <!-- Right Ear -->
+    <g id="ear-right">
+      <!-- Outer Ear Shell -->
+      <path d="M 705 360 C 725 270 715 170 675 85 C 625 155 565 240 550 295 C 620 310 675 330 705 360 Z" 
+            fill="url(#earRightOuter)" stroke="#110f17" stroke-width="4" stroke-linejoin="round" />
+      <!-- Inner Ear Rose Cavity -->
+      <path d="M 685 330 C 695 265 685 185 660 125 C 625 180 580 245 568 285 C 615 298 660 312 685 330 Z" 
+            fill="url(#earInnerR)" />
+      <!-- Fluffy White/Rose Inner Tufts -->
+      <path d="M 675 315 C 655 285 625 290 610 270 C 625 295 640 315 650 335 Z" fill="#ffffff" opacity="0.85" />
+      <path d="M 655 335 C 630 305 602 308 588 285 C 605 315 625 335 635 350 Z" fill="#fce7f3" opacity="0.7" />
+      <path d="M 680 100 C 700 175 710 250 700 325" stroke="#fda4af" stroke-width="2.5" fill="none" opacity="0.45" />
+    </g>
+  </g>
+
+
+  <!-- HEAD BASE & CHEEKS -->
+  <g id="head" filter="url(#subtleDrop)">
+    <!-- Main Contoured Cat Head with Charming Fluffy Cheeks -->
+    <path d="M 450 270 
+             C 480 265 520 265 550 270 
+             C 625 280 690 325 725 390 
+             C 745 425 735 450 760 475 
+             C 738 485 732 495 755 520 
+             C 725 530 710 555 690 585 
+             C 645 650 565 685 500 685 
+             C 435 685 355 650 310 585 
+             C 290 555 275 530 245 520 
+             C 268 495 262 485 240 475 
+             C 265 450 255 425 275 390 
+             C 310 325 375 280 450 270 Z" 
+          fill="url(#headShading)" 
+          stroke="#161420" stroke-width="3.5" />
+
+    <!-- Rim Light Sheen on Fur Borders -->
+    <path d="M 275 390 C 255 425 265 450 240 475 C 262 485 268 495 245 520 C 275 530 290 555 310 585 C 355 650 435 685 500 685" 
+          stroke="url(#rimPinkL)" stroke-width="8" fill="none" opacity="0.65" stroke-linecap="round" />
+    <path d="M 725 390 C 745 425 735 450 760 475 C 738 485 732 495 755 520 C 725 530 710 555 690 585 C 645 650 565 685 500 685" 
+          stroke="url(#rimPinkR)" stroke-width="8" fill="none" opacity="0.65" stroke-linecap="round" />
+
+    <!-- Soft Forehead Curvature Glow -->
+    <ellipse cx="500" cy="340" rx="120" ry="50" fill="#363148" opacity="0.32" />
+  </g>
+
+  <!-- CHEEK BLUSH (Sweet Girly Pink Accent) -->
+  <ellipse cx="320" cy="520" rx="60" ry="32" fill="#fb7185" opacity="0.22" filter="url(#subtleDrop)" />
+  <ellipse cx="680" cy="520" rx="60" ry="32" fill="#fb7185" opacity="0.22" filter="url(#subtleDrop)" />
+
+
+  <!-- EYES (Vibrant Golden-Amber Sclera + Royal Amethyst Pupils) -->
+  <!-- LEFT EYE -->
+  <g id="eye-left">
+    <!-- Back Liner Shadow -->
+    <path d="M 295 440 C 310 370 410 360 450 415 C 460 435 450 475 415 500 C 365 520 305 495 295 440 Z" fill="#08070d" />
+    
+    <!-- Golden Sclera / Iris -->
+    <path d="M 308 440 C 320 380 405 372 440 418 C 450 435 440 470 410 492 C 368 510 320 490 308 440 Z" fill="url(#eyeScleraGold)" />
+    <!-- Fine Iris Texture Ring -->
+    <ellipse cx="378" cy="442" rx="55" ry="58" stroke="#ca8a04" stroke-width="3" fill="none" opacity="0.5" />
+
+    <!-- Amethyst / Purple Pupil Core (Signature trait of Is!) -->
+    <ellipse cx="382" cy="444" rx="42" ry="50" fill="url(#pupilAmethyst)" />
+    <!-- Deepest Pupil Center -->
+    <circle cx="382" cy="444" r="16" fill="#1e053a" />
+
+    <!-- Glint Sparkles & Life Catchlights -->
+    <!-- Primary Big Glossy Reflection -->
+    <ellipse cx="358" cy="420" rx="16" ry="22" transform="rotate(-28 358 420)" fill="#ffffff" opacity="0.95" />
+    <!-- Secondary Bottom Glow -->
+    <ellipse cx="410" cy="470" rx="9" ry="12" fill="#ffffff" opacity="0.8" />
+    <!-- Starlight Gleam -->
+    <path d="M 395 415 Q 395 423 403 423 Q 395 423 395 431 Q 395 423 387 423 Q 395 423 395 415 Z" fill="#ffffff" opacity="0.9" />
+
+    <!-- Upper Cat-Eye Eyeliner & Winged Lash -->
+    <path d="M 288 442 C 305 365 415 355 460 412" stroke="#09080e" stroke-width="11" stroke-linecap="round" fill="none" />
+    <!-- Chic winged lashes -->
+    <path d="M 300 425 C 278 412 262 396 258 390" stroke="#09080e" stroke-width="6" stroke-linecap="round" fill="none" />
+    <path d="M 305 440 C 285 435 272 422 268 418" stroke="#09080e" stroke-width="4" stroke-linecap="round" fill="none" />
+  </g>
+
+  <!-- RIGHT EYE -->
+  <g id="eye-right">
+    <!-- Back Liner Shadow -->
+    <path d="M 705 440 C 690 370 590 360 550 415 C 540 435 550 475 585 500 C 635 520 695 495 705 440 Z" fill="#08070d" />
+    
+    <!-- Golden Sclera / Iris -->
+    <path d="M 692 440 C 680 380 595 372 560 418 C 550 435 560 470 590 492 C 632 510 680 490 692 440 Z" fill="url(#eyeScleraGold)" />
+    <!-- Fine Iris Texture Ring -->
+    <ellipse cx="622" cy="442" rx="55" ry="58" stroke="#ca8a04" stroke-width="3" fill="none" opacity="0.5" />
+
+    <!-- Amethyst / Purple Pupil Core -->
+    <ellipse cx="618" cy="444" rx="42" ry="50" fill="url(#pupilAmethyst)" />
+    <!-- Deepest Pupil Center -->
+    <circle cx="618" cy="444" r="16" fill="#1e053a" />
+
+    <!-- Glint Sparkles -->
+    <ellipse cx="594" cy="420" rx="16" ry="22" transform="rotate(-28 594 420)" fill="#ffffff" opacity="0.95" />
+    <ellipse cx="646" cy="470" rx="9" ry="12" fill="#ffffff" opacity="0.8" />
+    <path d="M 631 415 Q 631 423 639 423 Q 631 423 631 431 Q 631 423 623 423 Q 631 423 631 415 Z" fill="#ffffff" opacity="0.9" />
+
+    <!-- Upper Cat-Eye Eyeliner & Winged Lash -->
+    <path d="M 712 442 C 695 365 585 355 540 412" stroke="#09080e" stroke-width="11" stroke-linecap="round" fill="none" />
+    <!-- Chic winged lashes -->
+    <path d="M 700 425 C 722 412 738 396 742 390" stroke="#09080e" stroke-width="6" stroke-linecap="round" fill="none" />
+    <path d="M 695 440 C 715 435 728 422 732 418" stroke="#09080e" stroke-width="4" stroke-linecap="round" fill="none" />
+  </g>
+
+
+  <!-- EYEBROWS (Lively & Sincere) -->
+  <path d="M 325 350 C 355 328 405 328 435 345" stroke="#3d3752" stroke-width="7" stroke-linecap="round" fill="none" />
+  <path d="M 675 350 C 645 328 595 328 565 345" stroke="#3d3752" stroke-width="7" stroke-linecap="round" fill="none" />
+
+
+  <!-- MUZZLE PADS (Velvety soft whisker pillows) -->
+  <g id="muzzle-pads">
+    <ellipse cx="462" cy="535" rx="45" ry="32" fill="url(#muzzleLeft)" />
+    <ellipse cx="538" cy="535" rx="45" ry="32" fill="url(#muzzleRight)" />
+
+    <!-- Cute Heart-Shaped Pink Velvet Nose -->
+    <path d="M 478 488 
+             C 478 480 490 476 500 478 
+             C 510 476 522 480 522 488 
+             C 522 499 506 512 500 516 
+             C 494 512 478 499 478 488 Z" 
+          fill="url(#nosePink)" />
+    <!-- Nose Highlight -->
+    <ellipse cx="494" cy="484" rx="5" ry="2.5" fill="#ffffff" opacity="0.8" />
+
+    <!-- Philtrum line -->
+    <path d="M 500 516 L 500 530" stroke="#161420" stroke-width="4" stroke-linecap="round" />
+  </g>
+
+
+  <!-- MOUTH: 'ANIMADA E BARULHENTA' -->
+  <g id="mouth">
+    <!-- Joyful Open Mouth Cavity -->
+    <path d="M 432 532 
+             C 455 545 480 548 500 536 
+             C 520 548 545 545 568 532 
+             C 580 580 555 640 500 640 
+             C 445 640 420 580 432 532 Z" 
+          fill="url(#mouthThroat)" 
+          stroke="#161420" stroke-width="4.5" stroke-linejoin="round" />
+
+    <!-- Happy Curved Pink Tongue -->
+    <path d="M 450 595 C 470 570 530 570 550 595 C 542 630 522 640 500 640 C 478 640 458 630 450 595 Z" 
+          fill="url(#tonguePink)" />
+    <path d="M 500 588 L 500 630" stroke="#be185d" stroke-width="2.5" stroke-linecap="round" opacity="0.5" />
+
+    <!-- Adorable Kitten Fangs Peeking Down -->
+    <path d="M 448 538 Q 454 553 458 558 Q 462 550 464 540 Z" fill="#ffffff" />
+    <path d="M 552 538 Q 546 553 542 558 Q 538 550 536 540 Z" fill="#ffffff" />
+
+    <!-- Upper Feline 'W' Lip -->
+    <path d="M 420 528 C 445 542 480 542 500 530 C 520 542 555 542 580 528" 
+          stroke="#151320" stroke-width="7" stroke-linecap="round" fill="none" />
+    <path d="M 424 528 C 445 540 480 540 500 529 C 520 540 555 540 576 528" 
+          stroke="#322d44" stroke-width="3" stroke-linecap="round" fill="none" />
+
+    <!-- Whisker Freckle Dots -->
+    <circle cx="435" cy="515" r="3" fill="#3a344d" />
+    <circle cx="422" cy="524" r="2.8" fill="#3a344d" />
+    <circle cx="438" cy="528" r="2.8" fill="#3a344d" />
+    <circle cx="565" cy="515" r="3" fill="#3a344d" />
+    <circle cx="578" cy="524" r="2.8" fill="#3a344d" />
+    <circle cx="562" cy="528" r="2.8" fill="#3a344d" />
+  </g>
+
+
+  <!-- WHISKERS (Gracefully curved, energetic & shiny) -->
+  <g id="whiskers">
+    <!-- Left Whiskers -->
+    <path d="M 420 512 C 340 495 250 505 160 530" stroke="#f8fafc" stroke-width="3.6" stroke-linecap="round" opacity="0.9" />
+    <path d="M 415 525 C 330 528 240 555 150 595" stroke="#f8fafc" stroke-width="3.8" stroke-linecap="round" opacity="0.95" />
+    <path d="M 420 538 C 345 560 265 605 180 660" stroke="#f8fafc" stroke-width="3.4" stroke-linecap="round" opacity="0.85" />
+
+    <!-- Right Whiskers -->
+    <path d="M 580 512 C 660 495 750 505 840 530" stroke="#f8fafc" stroke-width="3.6" stroke-linecap="round" opacity="0.9" />
+    <path d="M 585 525 C 670 528 760 555 850 595" stroke="#f8fafc" stroke-width="3.8" stroke-linecap="round" opacity="0.95" />
+    <path d="M 580 538 C 655 560 735 605 820 660" stroke="#f8fafc" stroke-width="3.4" stroke-linecap="round" opacity="0.85" />
+  </g>
+
+
+  <!-- LUXURY ACCESSORY (Manu Moda Íntima Satin Bow & Crown) -->
+  <g id="accessory" filter="url(#subtleDrop)">
+    <!-- Collar Band -->
+    <path d="M 390 665 C 450 682 550 682 610 665 C 615 682 605 700 598 706 C 540 720 460 720 402 706 C 395 700 385 682 390 665 Z" 
+          fill="url(#satinKnotBall)" stroke="#701a75" stroke-width="2.5" />
+
+    <!-- Left Bow Loop -->
+    <path d="M 500 700 
+             C 440 635 340 640 320 690 
+             C 308 728 358 765 432 740 
+             C 470 727 488 714 500 700 Z" 
+          fill="url(#satinFoldL)" stroke="#831843" stroke-width="3" />
+    <!-- Loop Inner Fold Sheen -->
+    <path d="M 358 690 C 390 678 435 690 460 714" stroke="#fdf2f8" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.85" />
+
+    <!-- Right Bow Loop -->
+    <path d="M 500 700 
+             C 560 635 660 640 680 690 
+             C 692 728 642 765 568 740 
+             C 530 727 512 714 500 700 Z" 
+          fill="url(#satinFoldR)" stroke="#831843" stroke-width="3" />
+    <!-- Loop Inner Fold Sheen -->
+    <path d="M 642 690 C 610 678 565 690 540 714" stroke="#fdf2f8" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.85" />
+
+    <!-- Fluttering Ribbon Tails -->
+    <!-- Left Tail -->
+    <path d="M 482 720 C 455 770 410 820 380 870 C 412 858 438 864 462 878 C 478 820 490 770 498 732 Z" 
+          fill="url(#satinFoldL)" stroke="#831843" stroke-width="2.5" />
+    <!-- Right Tail -->
+    <path d="M 518 720 C 545 770 590 820 620 870 C 588 858 562 864 538 878 C 522 820 510 770 502 732 Z" 
+          fill="url(#satinFoldR)" stroke="#831843" stroke-width="2.5" />
+
+    <!-- Center Knot -->
+    <ellipse cx="500" cy="708" rx="28" ry="25" fill="url(#satinKnotBall)" stroke="#831843" stroke-width="3" />
+    <ellipse cx="500" cy="702" rx="18" ry="9" fill="#fdf2f8" opacity="0.75" />
+
+    <!-- GOLD CROWN CHARM (Emblem of Manu Moda Íntima) -->
+    <g id="crown-charm" filter="url(#glowGold)">
+      <!-- Connecting Jump Ring -->
+      <circle cx="500" cy="735" r="6" stroke="#facc15" stroke-width="3" fill="none" />
+      
+      <!-- Crown Shape -->
+      <path d="M 472 770 
+               L 480 750 
+               L 490 760 
+               L 500 744 
+               L 510 760 
+               L 520 750 
+               L 528 770 
+               Z" 
+            fill="url(#goldSheen)" stroke="#854d0e" stroke-width="2.5" stroke-linejoin="round" />
+      <!-- Crown Base Band -->
+      <rect x="470" y="770" width="60" height="8" rx="3" fill="url(#goldSheen)" stroke="#854d0e" stroke-width="2" />
+      
+      <!-- Crown Jewels / Highlights -->
+      <circle cx="480" cy="750" r="3" fill="#ffffff" />
+      <circle cx="500" cy="744" r="3.5" fill="#ffffff" />
+      <circle cx="520" cy="750" r="3" fill="#ffffff" />
+      
+      <!-- Central Heart Gemstone -->
+      <path d="M 495 767 C 495 763 498 761 500 763 C 502 761 505 763 505 767 C 505 771 500 774 500 774 C 500 774 495 771 495 767 Z" 
+            fill="#ec4899" />
+    </g>
+  </g>
+
+
+  <!-- WAVING PAW (Animada, Amigável, Dando Boas-Vindas!) -->
+  <g id="waving-paw" filter="url(#subtleDrop)">
+    <!-- Arm extension -->
+    <path d="M 230 750 C 200 680 185 610 205 560 C 220 525 255 530 270 565 C 285 600 295 670 310 740 Z" 
+          fill="url(#headShading)" stroke="#161420" stroke-width="3" />
+    
+    <!-- Paw Mitt -->
+    <ellipse cx="235" cy="540" rx="48" ry="42" fill="url(#headShading)" stroke="#161420" stroke-width="3" />
+
+    <!-- Cute Pink Paw Beans (Almofadinhas Rosadas) -->
+    <!-- Main Center Heart-Pad -->
+    <path d="M 218 545 
+             C 218 535 228 530 235 534 
+             C 242 530 252 535 252 545 
+             C 252 556 239 568 235 570 
+             C 231 568 218 556 218 545 Z" 
+          fill="url(#pawPadMain)" />
+    <!-- 4 Little Toe Beans -->
+    <ellipse cx="204" cy="528" rx="10" ry="12" transform="rotate(-30 204 528)" fill="url(#toePad)" />
+    <ellipse cx="222" cy="512" rx="10" ry="13" transform="rotate(-10 222 512)" fill="url(#toePad)" />
+    <ellipse cx="248" cy="512" rx="10" ry="13" transform="rotate(10 248 512)" fill="url(#toePad)" />
+    <ellipse cx="266" cy="528" rx="10" ry="12" transform="rotate(30 266 528)" fill="url(#toePad)" />
+
+    <!-- Paw Edge Soft Glow -->
+    <path d="M 195 545 C 190 520 210 495 240 495 C 270 495 285 520 280 545" 
+          stroke="url(#rimPinkL)" stroke-width="4" fill="none" opacity="0.6" />
+  </g>
+
+</svg>
